@@ -37,7 +37,7 @@ jobs:
 
     steps:
       - name: run test
-        run: npm test
+        run: npm run test
 
   deploy:
     name: Deploy
