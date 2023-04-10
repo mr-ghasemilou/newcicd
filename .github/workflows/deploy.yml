@@ -30,9 +30,18 @@ jobs:
           name: production-files
           path: ./dist
 
+  test:
+    name: Test
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: run test
+        run: npm run test
+
   deploy:
     name: Deploy
-    needs: build
+    needs: test
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
 
